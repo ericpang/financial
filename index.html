@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizon Wealth Planning | Retirement, Investment &amp; Insurance Planning</title>
+  <meta name="description" content="Horizon Wealth Planning offers personalised retirement, investment and insurance planning. Book a free consultation today.">
+
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       1. DESIGN TOKENS (CSS custom properties)
+       ========================================================= */
+    :root {
+      --navy: #0B2545;
+      --navy-light: #13315C;
+      --gold: #C9A227;
+      --gold-dark: #A8851B;
+      --bg: #F7F9FC;
+      --white: #FFFFFF;
+      --text: #1F2A3C;
+      --muted: #5B6779;
+      --border: #D9E0EA;
+      --error: #D32F2F;
+      --success: #2E7D32;
+
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-6: 3rem;
+      --space-8: 5rem;
+
+      --radius: 10px;
+      --shadow-sm: 0 2px 8px rgba(11, 37, 69, 0.08);
+      --shadow-md: 0 10px 30px rgba(11, 37, 69, 0.14);
+      --nav-height: 68px;
+      --font-heading: "Playfair Display", Georgia, serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    /* =========================================================
+       2. BASE / RESET
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: var(--font-heading); color: var(--navy); line-height: 1.2; margin: 0 0 var(--space-2); }
+    p { margin: 0 0 var(--space-2); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    button, input, select, textarea { font: inherit; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 var(--space-3); }
+    .section { padding: var(--space-8) 0; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: var(--space-1); }
+    .section-title::after {
+      content: ""; display: block; width: 60px; height: 3px; background: var(--gold);
+      margin: var(--space-2) auto 0; border-radius: 2px;
+    }
+    .section-intro { text-align: center; color: var(--muted); max-width: 560px; margin: var(--space-2) auto var(--space-6); }
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+
+    /* =========================================================
+       3. BUTTONS
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.85rem 1.7rem; border-radius: 999px; border: 2px solid transparent;
+      font-weight: 600; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn:disabled { cursor: not-allowed; opacity: .85; transform: none; box-shadow: none; }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: #D8B23A; }
+    .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,.8); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--navy-light); }
+
+    /* Loading spinner shown inside buttons */
+    .spinner {
+      display: none; width: 18px; height: 18px; border-radius: 50%;
+      border: 3px solid rgba(11,37,69,.25); border-top-color: currentColor;
+      animation: spin .8s linear infinite;
+    }
+    .btn.loading .spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* =========================================================
+       4. STICKY NAVIGATION
+       ========================================================= */
+    .site-header {
+      position: sticky; top: 0; z-index: 100; height: var(--nav-height);
+      background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--white); }
+    .logo span { color: var(--gold); }
+
+    .nav-toggle {
+      background: none; border: 0; cursor: pointer; width: 44px; height: 44px; padding: 10px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .nav-toggle .bar { display: block; height: 3px; background: var(--white); border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* Mobile: dropdown panel */
+    .nav-links {
+      position: absolute; top: var(--nav-height); left: 0; right: 0;
+      background: var(--navy); padding: var(--space-2) var(--space-3) var(--space-3);
+      display: none; flex-direction: column; gap: var(--space-1);
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { color: var(--white); padding: 0.6rem 0; font-weight: 500; position: relative; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* =========================================================
+       5. HERO
+       ========================================================= */
+    .hero {
+      min-height: calc(100vh - var(--nav-height)); min-height: calc(100svh - var(--nav-height));
+      display: flex; align-items: center; color: var(--white); text-align: center;
+      padding: var(--space-6) 0;
+      background:
+        linear-gradient(135deg, rgba(11,37,69,.92) 0%, rgba(19,49,92,.82) 100%),
+        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80") center / cover no-repeat,
+        var(--navy);
+    }
+    .hero h1 { color: var(--white); font-size: 2.4rem; margin-bottom: var(--space-2); }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub { font-size: 1.1rem; max-width: 640px; margin: 0 auto var(--space-4); color: rgba(255,255,255,.88); }
+    .hero-actions { display: flex; flex-direction: column; gap: var(--space-2); align-items: center; margin-bottom: var(--space-6); }
+    .hero-actions .btn { width: 100%; max-width: 320px; }
+
+    .stats { display: grid; grid-template-columns: 1fr; gap: var(--space-3); border-top: 1px solid rgba(255,255,255,.2); padding-top: var(--space-4); }
+    .stat-number { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-label { color: rgba(255,255,255,.85); font-size: .95rem; margin-top: .4rem; }
+
+    /* =========================================================
+       6. TESTIMONIAL CAROUSEL
+       ========================================================= */
+    .carousel { position: relative; --per-view: 1; padding: 0 0 var(--space-6); }
+    .carousel-viewport { overflow: hidden; padding: var(--space-1) 0 var(--space-3); }
+    .carousel-track { display: flex; transition: transform .5s ease; will-change: transform; }
+    .carousel-slide { flex: 0 0 calc(100% / var(--per-view)); padding: 0 var(--space-1); }
+    .card {
+      height: 100%; background: var(--white); border-radius: var(--radius); padding: var(--space-4) var(--space-3);
+      box-shadow: var(--shadow-sm); border-top: 3px solid var(--gold);
+      display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .stars { display: flex; gap: 3px; margin-bottom: var(--space-2); color: var(--gold); }
+    .stars svg { width: 20px; height: 20px; fill: currentColor; }
+    .card blockquote { margin: 0 0 var(--space-3); font-style: italic; color: var(--text); flex: 1; }
+    .card-author { display: flex; align-items: center; gap: var(--space-2); }
+    .avatar { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--border); }
+    .author-name { font-weight: 600; color: var(--navy); display: block; }
+    .author-role { font-size: .88rem; color: var(--muted); }
+
+    .carousel-arrow {
+      position: absolute; top: calc(50% - 30px); transform: translateY(-50%); z-index: 2;
+      width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+      background: var(--navy); color: var(--white); display: grid; place-items: center;
+      box-shadow: var(--shadow-md); transition: background .2s, color .2s;
+    }
+    .carousel-arrow:hover { background: var(--gold); color: var(--navy); }
+    .carousel-arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .carousel-arrow.prev { left: -6px; }
+    .carousel-arrow.next { right: -6px; }
+
+    .carousel-dots { display: flex; justify-content: center; gap: 10px; }
+    .dot {
+      width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 2px solid var(--navy);
+      background: transparent; cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .dot:hover { transform: scale(1.2); }
+    .dot[aria-selected="true"] { background: var(--gold); border-color: var(--gold); }
+
+    /* =========================================================
+       7. ENQUIRY FORM
+       ========================================================= */
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+    .contact-info h3 { font-size: 1.4rem; }
+    .info-list { display: grid; gap: var(--space-3); margin-top: var(--space-3); }
+    .info-item { display: flex; gap: var(--space-2); align-items: flex-start; }
+    .info-icon {
+      flex: 0 0 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--gold);
+      display: grid; place-items: center;
+    }
+    .info-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .info-item strong { display: block; color: var(--navy); }
+    .info-item span, .info-item a { color: var(--muted); }
+    .info-item a:hover { color: var(--gold-dark); }
+
+    .form-card { background: var(--bg); padding: var(--space-4) var(--space-3); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 0 var(--space-2); }
+    .field { margin-bottom: var(--space-3); }
+    .field label, .field legend { display: block; font-weight: 500; font-size: .92rem; margin-bottom: .35rem; color: var(--navy); padding: 0; }
+    .field .req { color: var(--error); }
+    .field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select, .field textarea {
+      width: 100%; padding: .75rem .9rem; border: 1.5px solid var(--border); border-radius: 8px;
+      background: var(--white); color: var(--text); transition: border-color .2s, box-shadow .2s;
+    }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,162,39,.25); }
+    .field .invalid { border-color: var(--error) !important; }
+    .field .invalid:focus { box-shadow: 0 0 0 3px rgba(211,47,47,.2); }
+    .error-msg { display: block; color: var(--error); font-size: .84rem; min-height: 1.1em; margin-top: .3rem; }
+    fieldset.field { border: 0; margin: 0 0 var(--space-3); padding: 0; min-width: 0; }
+    .radio-group { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); }
+    .radio-group label, .consent label { display: inline-flex; align-items: center; gap: .5rem; font-weight: 400; color: var(--text); cursor: pointer; margin: 0; }
+    .radio-group input, .consent input { accent-color: var(--navy); width: 18px; height: 18px; flex: 0 0 auto; }
+    .consent label { align-items: flex-start; font-size: .9rem; }
+    .consent input { margin-top: 3px; }
+    .form-card .btn { width: 100%; }
+
+    .success { text-align: center; padding: var(--space-4) var(--space-2); }
+    .success-icon { width: 72px; height: 72px; margin: 0 auto var(--space-2); border-radius: 50%; background: var(--success); color: var(--white); display: grid; place-items: center; }
+    .success-icon svg { width: 38px; height: 38px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .success h3 { font-size: 1.6rem; }
+
+    /* =========================================================
+       8. FOOTER
+       ========================================================= */
+    .site-footer { background: var(--navy); color: rgba(255,255,255,.8); padding-top: var(--space-8); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); padding-bottom: var(--space-6); }
+    .site-footer h4 { font-family: var(--font-heading); color: var(--white); font-size: 1.1rem; margin: 0 0 var(--space-2); }
+    .footer-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--white); display: inline-block; margin-bottom: var(--space-2); }
+    .footer-logo span { color: var(--gold); }
+    .site-footer li { margin-bottom: .55rem; }
+    .site-footer li a { transition: color .2s, padding-left .2s; }
+    .site-footer li a:hover { color: var(--gold); padding-left: 4px; }
+
+    .newsletter-form { display: flex; flex-direction: column; gap: var(--space-1); }
+    .newsletter-form input {
+      padding: .75rem .9rem; border-radius: 8px; border: 1.5px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08); color: var(--white);
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.55); }
+    .newsletter-form input:focus { outline: none; border-color: var(--gold); }
+    .newsletter-form input.invalid { border-color: #FF8A80; }
+    .newsletter-msg { font-size: .85rem; margin-top: .5rem; min-height: 1.2em; }
+    .newsletter-msg.error { color: #FF8A80; }
+    .newsletter-msg.ok { color: #A5D6A7; }
+
+    .socials { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+    .socials a {
+      width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.3);
+      display: grid; place-items: center; color: var(--white); transition: background .2s, color .2s, transform .2s, border-color .2s;
+    }
+    .socials a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); transform: translateY(-3px); }
+    .socials svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: var(--space-3) 0; font-size: .85rem; text-align: center; }
+    .footer-bottom p { margin: 0 0 .4rem; }
+    .disclaimer { color: rgba(255,255,255,.6); }
+
+    /* Back-to-top button */
+    .back-to-top {
+      position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 48px; height: 48px; border-radius: 50%;
+      border: 0; cursor: pointer; background: var(--gold); color: var(--navy); display: grid; place-items: center;
+      box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transform: translateY(12px);
+      transition: opacity .3s, transform .3s, visibility .3s, background .2s;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: none; }
+    .back-to-top:hover { background: #D8B23A; }
+    .back-to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* =========================================================
+       9. SCROLL ANIMATIONS
+       ========================================================= */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .carousel-track, .btn, .card { transition: none; }
+    }
+
+    /* =========================================================
+       10. RESPONSIVE: TABLET (>= 768px)
+       ========================================================= */
+    @media (min-width: 768px) {
+      .section-title { font-size: 2.4rem; }
+      .nav-toggle { display: none; }
+      .nav-links {
+        position: static; display: flex; flex-direction: row; gap: var(--space-4);
+        padding: 0; background: none; border: 0;
+      }
+      .nav-links a { padding: .4rem 0; }
+      .nav-links a::after {
+        content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--gold); transition: width .25s;
+      }
+      .nav-links a:hover::after { width: 100%; }
+
+      .hero h1 { font-size: 3.6rem; }
+      .hero-sub { font-size: 1.25rem; }
+      .hero-actions { flex-direction: row; justify-content: center; }
+      .hero-actions .btn { width: auto; max-width: none; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .stat-number { font-size: 3rem; }
+
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .form-card { padding: var(--space-4); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { display: flex; justify-content: space-between; gap: var(--space-3); text-align: left; }
+      .footer-bottom p { margin: 0; }
+      .newsletter-form { flex-direction: row; }
+      .newsletter-form input { flex: 1; min-width: 0; }
+    }
+
+    /* =========================================================
+       11. RESPONSIVE: DESKTOP (>= 1024px)
+       ========================================================= */
+    @media (min-width: 1024px) {
+      .carousel { --per-view: 3; }
+      .carousel-arrow.prev { left: -22px; }
+      .carousel-arrow.next { right: -22px; }
+      .contact-grid { grid-template-columns: 5fr 7fr; gap: var(--space-8); align-items: start; }
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.4fr; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       STICKY NAVIGATION
+       ========================================================= -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a href="#home" class="logo">Horizon <span>Wealth</span> Planning</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         HERO SECTION
+         ========================================================= -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title" class="reveal">Plan Today. <em>Prosper Tomorrow.</em></h1>
+        <p class="hero-sub reveal">Personalised retirement, investment and insurance planning built around your goals, so you can move forward with clarity and confidence.</p>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn-gold">Book a Free Consultation</a>
+          <a href="#testimonials" class="btn btn-outline">Learn More</a>
+        </div>
+        <!-- Trust stats (numbers count up when scrolled into view) -->
+        <div class="stats reveal" role="list">
+          <div role="listitem">
+            <div class="stat-number" data-target="15" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+            <div class="stat-label">Clients</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-number" data-target="500" data-prefix="$" data-suffix="M">0</div>
+            <div class="stat-label">Assets Advised</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS CAROUSEL
+         ========================================================= -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="testimonials-title">What Our Clients Say</h2>
+        <p class="section-intro reveal">Real stories from families and professionals we have helped plan for what matters most.</p>
+
+        <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+          <button class="carousel-arrow prev" id="prevBtn" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel-arrow next" id="nextBtn" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="track" aria-live="off">
+              <!-- Each star rating uses a reusable star path -->
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Horizon turned a vague worry about retirement into a clear, achievable plan. I finally feel in control of my future.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="Portrait of Sarah Mitchell" width="54" height="54" loading="lazy">
+                    <div><span class="author-name">Sarah Mitchell</span><span class="author-role">Primary School Teacher</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Their investment strategy was tailored to my risk appetite. Three years on, my portfolio has grown steadily and I sleep well.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=12" alt="Portrait of David Tan" width="54" height="54" loading="lazy">
+                    <div><span class="author-name">David Tan</span><span class="author-role">Software Engineer</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“When we needed insurance and estate planning for our family, they explained every option patiently and without pressure.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=32" alt="Portrait of Priya Nair" width="54" height="54" loading="lazy">
+                    <div><span class="author-name">Priya Nair</span><span class="author-role">Paediatric Nurse</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“As a business owner, my finances were complicated. Horizon simplified my tax planning and saved me thousands.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=15" alt="Portrait of James Okafor" width="54" height="54" loading="lazy">
+                    <div><span class="author-name">James Okafor</span><span class="author-role">Restaurant Owner</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Honest, professional and genuinely caring. They helped us retire two years earlier than we thought possible.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=68" alt="Portrait of Robert Lim" width="54" height="54" loading="lazy">
+                    <div><span class="author-name">Robert Lim</span><span class="author-role">Retired Civil Engineer</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-dots" id="dots" role="tablist" aria-label="Choose testimonial"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ENQUIRY FORM SECTION
+         ========================================================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="contact-title">Start Your Financial Journey</h2>
+        <p class="section-intro reveal">Tell us a little about yourself and one of our planners will be in touch within one business day.</p>
+
+        <div class="contact-grid">
+          <!-- Left column: contact information -->
+          <div class="contact-info reveal">
+            <h3>Get in touch</h3>
+            <p>Prefer to talk first? Reach us using any of the details below.</p>
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div><strong>Address</strong><span>88 Marina Boulevard, #20-01<br>Horizon Tower, Singapore 018980</span></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                <div><strong>Phone</strong><a href="tel:+6561234567">+65 6123 4567</a></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg></span>
+                <div><strong>Email</strong><a href="mailto:hello@horizonwealth.example">hello@horizonwealth.example</a></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <div><strong>Office Hours</strong><span>Mon–Fri: 9:00 am – 6:00 pm<br>Sat: 10:00 am – 1:00 pm</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right column: the form -->
+          <div class="form-card reveal" id="formCard">
+            <form id="enquiryForm" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" autocomplete="name" aria-describedby="fullName-error" required>
+                  <span class="error-msg" id="fullName-error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+                  <span class="error-msg" id="email-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" placeholder="Digits only, 8–15" aria-describedby="phone-error" required>
+                  <span class="error-msg" id="phone-error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="ageRange">Age Range <span class="req" aria-hidden="true">*</span></label>
+                  <select id="ageRange" name="ageRange" aria-describedby="ageRange-error" required>
+                    <option value="">Select…</option>
+                    <option>18–29</option>
+                    <option>30–39</option>
+                    <option>40–49</option>
+                    <option>50–59</option>
+                    <option>60+</option>
+                  </select>
+                  <span class="error-msg" id="ageRange-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="interest">Area of Interest <span class="req" aria-hidden="true">*</span></label>
+                <select id="interest" name="interest" aria-describedby="interest-error" required>
+                  <option value="">Select…</option>
+                  <option>Retirement Planning</option>
+                  <option>Investment</option>
+                  <option>Insurance</option>
+                  <option>Estate Planning</option>
+                  <option>Tax Planning</option>
+                </select>
+                <span class="error-msg" id="interest-error" role="alert"></span>
+              </div>
+
+              <fieldset class="field" aria-describedby="contactMethod-error">
+                <legend>Preferred Contact Method <span class="req" aria-hidden="true">*</span></legend>
+                <div class="radio-group">
+                  <label><input type="radio" name="contactMethod" value="Email"> Email</label>
+                  <label><input type="radio" name="contactMethod" value="Phone"> Phone</label>
+                  <label><input type="radio" name="contactMethod" value="WhatsApp"> WhatsApp</label>
+                </div>
+                <span class="error-msg" id="contactMethod-error" role="alert"></span>
+              </fieldset>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your goals (optional)"></textarea>
+              </div>
+
+              <div class="field consent">
+                <label for="consent">
+                  <input type="checkbox" id="consent" name="consent" aria-describedby="consent-error" required>
+                  <span>I agree to be contacted by Horizon Wealth Planning regarding my enquiry. <span class="req" aria-hidden="true">*</span></span>
+                </label>
+                <span class="error-msg" id="consent-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn-gold" id="submitBtn">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Submit Enquiry</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: brand + socials -->
+        <div>
+          <a href="#home" class="footer-logo">Horizon <span>Wealth</span> Planning</a>
+          <p>Independent, client-first financial planning. We help individuals and families build lasting wealth and protect what matters most.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.9H3.7V20h3.2V8.9zM5.3 3.9a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.3 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.3.7-2.8 1.4V8.9h-3.1V20h3.2v-6c0-1.6.6-2.6 1.9-2.6 1.2 0 1.7.9 1.7 2.6V20h3.3v-6.4z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 7.4a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8zM17 6.2a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1zM16 3H8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V8a5 5 0 0 0-5-5zm3.4 13A3.4 3.4 0 0 1 16 19.4H8A3.4 3.4 0 0 1 4.6 16V8A3.4 3.4 0 0 1 8 4.6h8A3.4 3.4 0 0 1 19.4 8v8z"/></svg></a>
+            <a href="#" aria-label="X (formerly Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3l-6.6 7.5L22 21h-6.1l-4.8-6.2L5.6 21h-3l7-8L2.2 3h6.3l4.3 5.7L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Column 2: quick links -->
+        <nav aria-label="Quick links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Book a Consultation</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: services -->
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li>Retirement Planning</li>
+            <li>Investment Advisory</li>
+            <li>Insurance Planning</li>
+            <li>Estate Planning</li>
+            <li>Tax Planning</li>
+          </ul>
+        </div>
+
+        <!-- Column 4: newsletter -->
+        <div>
+          <h4>Newsletter</h4>
+          <p>Get monthly insights on saving, investing and protecting your wealth.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletterEmail" placeholder="Your email address" autocomplete="email" aria-describedby="newsletterMsg">
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+          <div class="newsletter-msg" id="newsletterMsg" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <!-- Bottom bar: copyright + disclaimer -->
+      <div class="footer-bottom">
+        <p>© <span id="year">2025</span> Horizon Wealth Planning. All rights reserved.</p>
+        <p class="disclaimer">This website is for informational purposes only and does not constitute financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button (appears after 400px of scrolling) -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* =========================================================
+         1. MOBILE MENU TOGGLE
+         ========================================================= */
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+
+      function setMenu(open) {
+        navLinks.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+      }
+      navToggle.addEventListener('click', function () {
+        setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
+      });
+      // Close the menu after choosing a link, or pressing Escape
+      navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+      /* =========================================================
+         2. FADE-IN ON SCROLL (IntersectionObserver)
+         ========================================================= */
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      /* =========================================================
+         3. COUNT-UP STATS
+         ========================================================= */
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function formatStat(el, value) {
+        return (el.dataset.prefix || '') + Math.round(value).toLocaleString('en-US') + (el.dataset.suffix || '');
+      }
+      function countUp(el) {
+        var target = parseFloat(el.dataset.target);
+        var duration = 2000;
+        if (reduceMotion) { el.textContent = formatStat(el, target); return; }
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          el.textContent = formatStat(el, target * eased);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var statEls = document.querySelectorAll('.stat-number');
+      if ('IntersectionObserver' in window) {
+        var statObserver = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { countUp(entry.target); obs.unobserve(entry.target); }
+          });
+        }, { threshold: 0.6 });
+        statEls.forEach(function (el) { statObserver.observe(el); });
+      } else {
+        statEls.forEach(function (el) { el.textContent = formatStat(el, parseFloat(el.dataset.target)); });
+      }
+
+      /* =========================================================
+         4. TESTIMONIAL CAROUSEL
+         ========================================================= */
+      var carousel = document.getElementById('carousel');
+      var track = document.getElementById('track');
+      var slides = track.children;
+      var dotsWrap = document.getElementById('dots');
+      var desktopQuery = window.matchMedia('(min-width: 1024px)');
+      var AUTOPLAY_MS = 5000;
+      var current = 0;
+      var timer = null;
+      var paused = false;
+
+      function perView() { return desktopQuery.matches ? 3 : 1; }
+      function pageCount() { return Math.max(slides.length - perView() + 1, 1); }
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i < pageCount(); i++) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'dot';
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+          dot.dataset.index = i;
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function render() {
+        track.style.transform = 'translateX(' + (-current * 100 / perView()) + '%)';
+        Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+          dot.setAttribute('aria-selected', String(i === current));
+          dot.tabIndex = i === current ? 0 : -1;
+        });
+        // Hide off-screen slides from assistive tech
+        Array.prototype.forEach.call(slides, function (slide, i) {
+          var visible = i >= current && i < current + perView();
+          slide.setAttribute('aria-hidden', String(!visible));
+        });
+      }
+
+      function goTo(index) {
+        var count = pageCount();
+        current = (index + count) % count; // wrap around
+        render();
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (reduceMotion) return;
+        timer = setInterval(function () { if (!paused) goTo(current + 1); }, AUTOPLAY_MS);
+      }
+      function stopAutoplay() { clearInterval(timer); timer = null; }
+
+      document.getElementById('prevBtn').addEventListener('click', function () { goTo(current - 1); startAutoplay(); });
+      document.getElementById('nextBtn').addEventListener('click', function () { goTo(current + 1); startAutoplay(); });
+      dotsWrap.addEventListener('click', function (e) {
+        var dot = e.target.closest('.dot');
+        if (dot) { goTo(parseInt(dot.dataset.index, 10)); startAutoplay(); }
+      });
+
+      // Pause on hover / keyboard focus
+      carousel.addEventListener('mouseenter', function () { paused = true; });
+      carousel.addEventListener('mouseleave', function () { paused = false; });
+      carousel.addEventListener('focusin', function () { paused = true; });
+      carousel.addEventListener('focusout', function () { paused = false; });
+
+      // Swipe support for touch devices
+      var touchStartX = 0, touchStartY = 0;
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+        paused = true;
+      }, { passive: true });
+      carousel.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+          goTo(dx < 0 ? current + 1 : current - 1);
+          startAutoplay();
+        }
+        paused = false;
+      }, { passive: true });
+
+      // Rebuild when crossing the 1-card / 3-card breakpoint
+      function onBreakpointChange() { buildDots(); goTo(Math.min(current, pageCount() - 1)); }
+      if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', onBreakpointChange);
+      else desktopQuery.addListener(onBreakpointChange);
+
+      buildDots();
+      render();
+      startAutoplay();
+
+      /* =========================================================
+         5. ENQUIRY FORM VALIDATION & SUBMIT
+         ========================================================= */
+      var form = document.getElementById('enquiryForm');
+      var submitBtn = document.getElementById('submitBtn');
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      var PHONE_RE = /^\d{8,15}$/;
+
+      function setError(id, message) {
+        var errorEl = document.getElementById(id + '-error');
+        var inputEl = document.getElementById(id);
+        errorEl.textContent = message;
+        if (inputEl) {
+          inputEl.classList.toggle('invalid', !!message);
+          inputEl.setAttribute('aria-invalid', message ? 'true' : 'false');
+        }
+        return !message;
+      }
+
+      // Each validator returns true when the field is valid
+      var validators = {
+        fullName: function () {
+          var v = form.fullName.value.trim();
+          return setError('fullName', !v ? 'Please enter your full name.' : v.length < 2 ? 'Name must be at least 2 characters.' : '');
+        },
+        email: function () {
+          var v = form.email.value.trim();
+          return setError('email', !v ? 'Please enter your email address.' : !EMAIL_RE.test(v) ? 'Please enter a valid email address.' : '');
+        },
+        phone: function () {
+          var v = form.phone.value.trim();
+          return setError('phone', !v ? 'Please enter your phone number.' : !PHONE_RE.test(v) ? 'Phone must contain digits only (8–15 digits).' : '');
+        },
+        ageRange: function () { return setError('ageRange', form.ageRange.value ? '' : 'Please select your age range.'); },
+        interest: function () { return setError('interest', form.interest.value ? '' : 'Please select an area of interest.'); },
+        contactMethod: function () {
+          var ok = !!form.querySelector('input[name="contactMethod"]:checked');
+          document.getElementById('contactMethod-error').textContent = ok ? '' : 'Please choose a contact method.';
+          return ok;
+        },
+        consent: function () { return setError('consent', form.consent.checked ? '' : 'You must agree to be contacted.'); }
+      };
+
+      // Re-validate on blur; once a field shows an error, clear it live as the user fixes it
+      Object.keys(validators).forEach(function (name) {
+        var fields = form.querySelectorAll('[name="' + name + '"]');
+        fields.forEach(function (field) {
+          field.addEventListener('blur', function () { if (field.type !== 'radio') validators[name](); });
+          field.addEventListener(field.tagName === 'SELECT' || field.type === 'radio' || field.type === 'checkbox' ? 'change' : 'input', function () {
+            var errorEl = document.getElementById(name + '-error');
+            if (errorEl.textContent) validators[name]();
+          });
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var firstInvalid = null;
+        Object.keys(validators).forEach(function (name) {
+          if (!validators[name]() && !firstInvalid) firstInvalid = form.querySelector('[name="' + name + '"]');
+        });
+        if (firstInvalid) { firstInvalid.focus(); return; }
+
+        // Show loading state for 1.5s, then replace the form with a success message
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        submitBtn.querySelector('.btn-label').textContent = 'Sending…';
+
+        setTimeout(function () {
+          var data = {
+            fullName: form.fullName.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim(),
+            ageRange: form.ageRange.value,
+            areaOfInterest: form.interest.value,
+            preferredContactMethod: form.querySelector('input[name="contactMethod"]:checked').value,
+            message: form.message.value.trim(),
+            consent: form.consent.checked
+          };
+          console.log(JSON.stringify(data, null, 2));
+
+          var card = document.getElementById('formCard');
+          card.innerHTML = '';
+          var box = document.createElement('div');
+          box.className = 'success';
+          box.setAttribute('role', 'status');
+          box.innerHTML =
+            '<div class="success-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+            '<h3></h3><p>Your enquiry has been received. One of our planners will contact you shortly by <strong></strong>.</p>';
+          // textContent keeps user input from being interpreted as HTML
+          box.querySelector('h3').textContent = 'Thank you, ' + data.fullName + '!';
+          box.querySelector('strong').textContent = data.preferredContactMethod.toLowerCase();
+          card.appendChild(box);
+        }, 1500);
+      });
+
+      /* =========================================================
+         6. NEWSLETTER SIGNUP
+         ========================================================= */
+      var newsletterForm = document.getElementById('newsletterForm');
+      var newsletterInput = document.getElementById('newsletterEmail');
+      var newsletterMsg = document.getElementById('newsletterMsg');
+
+      newsletterForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var v = newsletterInput.value.trim();
+        var valid = EMAIL_RE.test(v);
+        newsletterInput.classList.toggle('invalid', !valid);
+        newsletterInput.setAttribute('aria-invalid', String(!valid));
+        newsletterMsg.className = 'newsletter-msg ' + (valid ? 'ok' : 'error');
+        newsletterMsg.textContent = valid
+          ? 'Thanks for subscribing!'
+          : (v ? 'Please enter a valid email address.' : 'Please enter your email address.');
+        if (valid) newsletterForm.reset();
+      });
+
+      /* =========================================================
+         7. FOOTER YEAR
+         ========================================================= */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* =========================================================
+         8. BACK-TO-TOP BUTTON
+         ========================================================= */
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

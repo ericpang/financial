@@ -4,6 +4,8 @@ A one-page marketing site for the fictional "Horizon Wealth Planning" firm, offe
 
 **Live demo:** https://ericpang.github.io/financial/
 
+![Horizon Wealth Planning screenshot](docs/screenshot.png)
+
 ## Features
 
 - Hero section with animated count-up stats (years of experience, clients, assets advised)

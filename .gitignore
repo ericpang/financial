@@ -1,0 +1,10 @@
+.env*
+*.pem
+*.key
+*.pfx
+*.sqlite
+*.log
+node_modules/
+.claude/
+.DS_Store
+Thumbs.db

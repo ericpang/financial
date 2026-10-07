@@ -1,0 +1,2 @@
+# CSP hashes in v2/index.html are computed over LF line endings
+v2/index.html text eol=lf

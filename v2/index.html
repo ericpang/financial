@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- =========================================================
+       SECURITY (static hosting can't set headers, so meta equivalents)
+       Inline style and script are allowed by hash: run
+       python tools/update-csp.py after editing either block.
+       ========================================================= -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-OOP4GQNEtTg/Vf3ihESyS6WIGpiS0g5cOMQzQXgWCzk='; style-src 'sha256-Kt+9C8NpWhVrQIzyTZkgycfybFbN+k22KMztAJ0v1e0=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.pravatar.cc; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- =========================================================
+       SEO
+       ========================================================= -->
+  <title>Financial Planner Singapore | Retirement &amp; Investment Planning | Horizon Wealth</title>
+  <meta name="description" content="Friendly, fee-transparent financial planning in Singapore. Plan your retirement, investments and insurance with Horizon Wealth. Try the free nest egg calculator and book a free 45-minute consultation.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://ericpang.github.io/financial/v2/">
+  <meta name="theme-color" content="#2B2250">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='36' rx='20' ry='24' fill='%23FFD45C'/%3E%3Cellipse cx='25' cy='28' rx='5' ry='7' fill='%23fff' opacity='.6'/%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Horizon Wealth Planning">
+  <meta property="og:locale" content="en_SG">
+  <meta property="og:title" content="Horizon Wealth Planning: friendly financial planning in Singapore">
+  <meta property="og:description" content="See how your savings could grow with our free nest egg calculator, then plan retirement, investments and insurance with a real planner.">
+  <meta property="og:url" content="https://ericpang.github.io/financial/v2/">
+  <meta property="og:image" content="https://ericpang.github.io/financial/v2/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Horizon Wealth Planning home page with the nest egg calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Horizon Wealth Planning: friendly financial planning in Singapore">
+  <meta name="twitter:description" content="Free nest egg calculator, retirement checklist and 45-minute consultation.">
+  <meta name="twitter:image" content="https://ericpang.github.io/financial/v2/og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FinancialService",
+        "@id": "https://ericpang.github.io/financial/v2/#business",
+        "name": "Horizon Wealth Planning",
+        "url": "https://ericpang.github.io/financial/v2/",
+        "image": "https://ericpang.github.io/financial/v2/og.png",
+        "description": "Independent financial planning in Singapore covering retirement, investment, insurance, estate and tax planning.",
+        "telephone": "+65 6123 4567",
+        "email": "hello@horizonwealth.example",
+        "priceRange": "Free first consultation",
+        "areaServed": { "@type": "Country", "name": "Singapore" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "88 Marina Boulevard, #20-01, Horizon Tower",
+          "addressLocality": "Singapore",
+          "postalCode": "018980",
+          "addressCountry": "SG"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "13:00" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Financial planning services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retirement planning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Investment advisory" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance planning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate planning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tax planning" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ericpang.github.io/financial/v2/#website",
+        "url": "https://ericpang.github.io/financial/v2/",
+        "name": "Horizon Wealth Planning",
+        "inLanguage": "en-SG",
+        "publisher": { "@id": "https://ericpang.github.io/financial/v2/#business" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does the first consultation cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nothing. The first 45-minute consultation is free, with no obligation to buy any product." } },
+          { "@type": "Question", "name": "Do I need a lot of money to start financial planning?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Many clients start with a monthly budget and an emergency fund. A plan is most useful early, when small habits have the longest time to grow." } },
+          { "@type": "Question", "name": "What happens in the first meeting?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We talk about your goals, current savings, CPF, insurance and timeline. You leave with three priority actions, whether or not you work with us." } },
+          { "@type": "Question", "name": "How does Horizon Wealth get paid?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We charge a flat planning fee agreed in writing before any work starts, and we disclose any product commission up front." } },
+          { "@type": "Question", "name": "Can you help with CPF and retirement in Singapore?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We plan around CPF LIFE, SRS contributions and your cash savings to estimate a realistic monthly retirement income." } },
+          { "@type": "Question", "name": "Is my personal information safe?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We only ask for what we need to contact you, never ask for passwords or bank logins, and handle personal data in line with Singapore's PDPA." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Fredoka (headings) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       1. DESIGN TOKENS
+       ========================================================= */
+    :root {
+      --ink: #2B2250;
+      --ink-soft: #4A3F7A;
+      --muted: #645C8A;
+      --bg: #F6F4FF;
+      --white: #FFFFFF;
+      --berry: #FF6FA3;
+      --berry-dark: #E04F86;
+      --butter: #FFD45C;
+      --butter-soft: #FFF1C2;
+      --mint: #7FDDC0;
+      --mint-soft: #DDF7EE;
+      --sky: #9FD3FF;
+      --sky-soft: #E2F1FF;
+      --lilac-soft: #ECE7FF;
+      --peach-soft: #FFE4EE;
+      --border: #DCD6F5;
+      --error: #C62859;
+      --success: #1E8A68;
+
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-6: 3rem;
+      --space-8: 5rem;
+
+      --radius-sm: 12px;
+      --radius: 22px;
+      --radius-lg: 36px;
+      --shadow-pop: 0 6px 0 var(--ink);
+      --shadow-pop-sm: 0 4px 0 var(--ink);
+      --shadow-soft: 0 18px 40px rgba(43, 34, 80, 0.12);
+      --nav-height: 68px;
+      --cta-bar-height: 72px;
+      --font-heading: "Fredoka", "Nunito", system-ui, sans-serif;
+      --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    /* =========================================================
+       2. BASE / RESET
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; font-family: var(--font-body); font-size: 1.0625rem; color: var(--ink);
+      background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased;
+      padding-bottom: calc(var(--cta-bar-height) + env(safe-area-inset-bottom));
+    }
+    h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--ink); line-height: 1.15; margin: 0 0 var(--space-2); letter-spacing: -0.01em; }
+    p { margin: 0 0 var(--space-2); }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; }
+    ul, ol { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    :focus-visible { outline: 3px solid var(--berry); outline-offset: 3px; border-radius: 6px; }
+    [hidden] { display: none !important; }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 var(--space-2); }
+    .section { padding: var(--space-8) 0; }
+    .section-head { max-width: 620px; margin: 0 auto var(--space-6); text-align: center; }
+    .section-head h2 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
+    .section-head p { color: var(--muted); margin: 0; }
+    .visually-hidden {
+      position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap; margin: -1px;
+    }
+    .skip-link { position: absolute; left: 12px; top: -60px; z-index: 300; background: var(--ink); color: var(--white); padding: .6rem 1rem; border-radius: var(--radius-sm); }
+    .skip-link:focus { top: 12px; }
+
+    /* =========================================================
+       3. BUTTONS
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      min-height: 50px; padding: .75rem 1.5rem; border-radius: 999px; border: 2.5px solid var(--ink);
+      font-weight: 800; text-decoration: none; cursor: pointer; box-shadow: var(--shadow-pop-sm);
+      transition: transform .15s, box-shadow .15s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-pop); }
+    .btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+    .btn:disabled { cursor: not-allowed; opacity: .8; transform: none; }
+    .btn-berry { background: var(--berry); color: var(--ink); }
+    .btn-berry:hover { background: #FF85B2; }
+    .btn-butter { background: var(--butter); color: var(--ink); }
+    .btn-white { background: var(--white); color: var(--ink); }
+    .btn-block { width: 100%; }
+
+    .spinner {
+      display: none; width: 18px; height: 18px; border-radius: 50%;
+      border: 3px solid rgba(43,34,80,.25); border-top-color: var(--ink);
+      animation: spin .8s linear infinite;
+    }
+    .btn.loading .spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* =========================================================
+       4. STICKY NAVIGATION
+       ========================================================= */
+    .site-header {
+      position: sticky; top: 0; z-index: 100; height: var(--nav-height);
+      background: rgba(246, 244, 255, .92); backdrop-filter: saturate(1.4) blur(10px);
+      -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 2px solid var(--border);
+    }
+    .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+    .logo { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--font-heading); font-weight: 600; font-size: 1.25rem; text-decoration: none; }
+    .logo svg { width: 34px; height: 34px; flex: 0 0 auto; }
+    .nav-toggle {
+      background: var(--white); border: 2.5px solid var(--ink); border-radius: 14px; cursor: pointer;
+      width: 46px; height: 46px; padding: 11px 10px; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .nav-toggle .bar { display: block; height: 3px; background: var(--ink); border-radius: 3px; transition: transform .3s, opacity .3s; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .nav-links {
+      position: absolute; top: var(--nav-height); left: 0; right: 0; background: var(--bg);
+      padding: var(--space-2) var(--space-2) var(--space-3); display: none; flex-direction: column; gap: .25rem;
+      border-bottom: 2px solid var(--border); box-shadow: var(--shadow-soft);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a:not(.btn) { display: block; padding: .7rem .4rem; font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); }
+    .nav-links a:not(.btn):hover { background: var(--lilac-soft); }
+    .nav-links .btn { margin-top: var(--space-1); }
+
+    /* =========================================================
+       5. HERO + NEST EGG CALCULATOR
+       ========================================================= */
+    .hero { padding: var(--space-4) 0 var(--space-8); position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: auto -20% -40% -20%; height: 70%; z-index: -1;
+      background: radial-gradient(60% 60% at 30% 50%, var(--peach-soft), transparent 70%),
+                  radial-gradient(50% 60% at 75% 40%, var(--sky-soft), transparent 70%);
+    }
+    .hero-grid { display: grid; gap: var(--space-6); align-items: center; }
+    .hero h1 { font-size: clamp(2.3rem, 8vw, 3.9rem); }
+    .hero-sub { font-size: 1.15rem; color: var(--ink-soft); max-width: 34em; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0; }
+    .trust { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .trust li {
+      display: inline-flex; align-items: center; gap: .4rem; padding: .35rem .85rem; border-radius: 999px;
+      background: var(--white); border: 2px solid var(--border); font-size: .92rem; font-weight: 700;
+    }
+    .trust strong { font-family: var(--font-heading); font-weight: 600; }
+
+    .calc {
+      background: var(--white); border: 2.5px solid var(--ink); border-radius: var(--radius-lg);
+      box-shadow: 0 10px 0 var(--ink); padding: var(--space-3);
+    }
+    .calc h2 { font-size: 1.45rem; margin-bottom: .25rem; }
+    .calc-intro { color: var(--muted); font-size: .95rem; }
+    .calc-stage { display: grid; grid-template-columns: 110px 1fr; gap: var(--space-2); align-items: center; margin: var(--space-2) 0; padding: var(--space-2); border-radius: var(--radius); background: var(--butter-soft); }
+    .egg-wrap { width: 110px; height: 110px; }
+    #egg { transform-origin: 60px 92px; transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
+    .calc-total { font-family: var(--font-heading); font-weight: 600; font-size: clamp(1.8rem, 7vw, 2.4rem); line-height: 1.1; display: block; }
+    .calc-split { font-size: .9rem; color: var(--ink-soft); margin: .35rem 0 0; }
+    .calc-split b { white-space: nowrap; }
+    .range-field { margin-bottom: var(--space-2); }
+    .range-field label { display: flex; justify-content: space-between; gap: var(--space-1); font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
+    .range-field output { font-family: var(--font-heading); font-weight: 600; color: var(--berry-dark); }
+    input[type="range"] { width: 100%; height: 30px; accent-color: var(--berry); cursor: pointer; }
+    .calc .btn { margin-top: var(--space-1); }
+    .fineprint { font-size: .8rem; color: var(--muted); margin: var(--space-2) 0 0; }
+
+    /* =========================================================
+       6. SERVICES
+       ========================================================= */
+    .services-grid { display: grid; gap: var(--space-2); }
+    .service {
+      padding: var(--space-3); border-radius: var(--radius); border: 2.5px solid var(--ink);
+      background: var(--white);
+    }
+    .service:nth-child(1) { background: var(--peach-soft); }
+    .service:nth-child(2) { background: var(--sky-soft); }
+    .service:nth-child(3) { background: var(--mint-soft); }
+    .service:nth-child(4) { background: var(--butter-soft); }
+    .service:nth-child(5) { background: var(--lilac-soft); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 16px; background: var(--white); border: 2.5px solid var(--ink);
+      display: grid; place-items: center; margin-bottom: var(--space-2);
+    }
+    .service-icon svg { width: 26px; height: 26px; fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .service h3 { font-size: 1.3rem; margin-bottom: .4rem; }
+    .service p { margin: 0; color: var(--ink-soft); }
+
+    /* =========================================================
+       7. HOW IT WORKS (a real 3-step sequence)
+       ========================================================= */
+    .steps-section { background: var(--white); border-top: 2px solid var(--border); border-bottom: 2px solid var(--border); }
+    .steps { list-style: none; display: grid; gap: var(--space-4); counter-reset: step; }
+    .step { position: relative; padding-left: 72px; counter-increment: step; }
+    .step::before {
+      content: counter(step); position: absolute; left: 0; top: 0; width: 54px; height: 54px; border-radius: 50%;
+      display: grid; place-items: center; font-family: var(--font-heading); font-weight: 600; font-size: 1.5rem;
+      background: var(--butter); border: 2.5px solid var(--ink);
+    }
+    .step h3 { font-size: 1.3rem; margin-bottom: .3rem; }
+    .step p { margin: 0; color: var(--ink-soft); }
+
+    /* =========================================================
+       8. LEAD MAGNET: RETIREMENT CHECKLIST
+       ========================================================= */
+    .magnet {
+      display: grid; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-3);
+      border-radius: var(--radius-lg); background: var(--ink); color: var(--white);
+    }
+    .magnet h2 { color: var(--white); font-size: clamp(1.8rem, 5vw, 2.4rem); }
+    .magnet p { color: rgba(255,255,255,.85); }
+    .magnet-points { display: grid; gap: .5rem; margin-bottom: var(--space-2); }
+    .magnet-points li { display: flex; gap: .6rem; align-items: flex-start; }
+    .magnet-points svg { width: 22px; height: 22px; flex: 0 0 auto; margin-top: 2px; fill: none; stroke: var(--mint); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .magnet-card { background: var(--white); color: var(--ink); border-radius: var(--radius); padding: var(--space-3); box-shadow: 0 8px 0 var(--berry); }
+    .magnet-card h3 { font-size: 1.3rem; }
+
+    .checklist { background: var(--white); color: var(--ink); border-radius: var(--radius); padding: var(--space-3); }
+    .checklist h3 { font-size: 1.4rem; }
+    .checklist ol { list-style: none; display: grid; gap: .55rem; margin: var(--space-2) 0; }
+    .checklist label { display: flex; gap: .7rem; align-items: flex-start; cursor: pointer; }
+    .checklist input { width: 22px; height: 22px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--success); }
+    .checklist input:checked + span { text-decoration: line-through; color: var(--muted); }
+    .checklist-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+
+    /* =========================================================
+       9. TESTIMONIAL CAROUSEL
+       ========================================================= */
+    .carousel { position: relative; --per-view: 1; }
+    .carousel-viewport { overflow: hidden; padding: var(--space-1) 0 var(--space-3); }
+    .carousel-track { display: flex; transition: transform .5s ease; will-change: transform; }
+    .carousel-slide { flex: 0 0 calc(100% / var(--per-view)); padding: 0 var(--space-1); }
+    .card {
+      height: 100%; background: var(--white); border-radius: var(--radius); padding: var(--space-3);
+      border: 2.5px solid var(--ink); display: flex; flex-direction: column;
+    }
+    .carousel-slide:nth-child(3n+1) .card { background: var(--peach-soft); }
+    .carousel-slide:nth-child(3n+2) .card { background: var(--sky-soft); }
+    .carousel-slide:nth-child(3n) .card { background: var(--mint-soft); }
+    .stars { display: flex; gap: 2px; margin-bottom: var(--space-2); }
+    .stars svg { width: 20px; height: 20px; fill: var(--butter); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
+    .card blockquote { margin: 0 0 var(--space-3); flex: 1; font-size: 1.05rem; }
+    .card-author { display: flex; align-items: center; gap: .8rem; }
+    .avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--ink); background: var(--border); }
+    .author-name { font-weight: 800; display: block; }
+    .author-role { font-size: .88rem; color: var(--muted); }
+
+    .carousel-controls { display: flex; align-items: center; justify-content: center; gap: var(--space-2); }
+    .carousel-arrow {
+      width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--ink); cursor: pointer;
+      background: var(--white); display: grid; place-items: center; box-shadow: var(--shadow-pop-sm);
+    }
+    .carousel-arrow:hover { background: var(--butter); }
+    .carousel-arrow svg { width: 20px; height: 20px; fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .dot { width: 14px; height: 14px; padding: 0; border-radius: 50%; border: 2.5px solid var(--ink); background: var(--white); cursor: pointer; transition: width .25s, background .2s; }
+    .dot[aria-selected="true"] { width: 30px; border-radius: 999px; background: var(--berry); }
+
+    /* =========================================================
+       10. FAQ
+       ========================================================= */
+    .faq { max-width: 780px; margin: 0 auto; display: grid; gap: var(--space-2); }
+    .faq details { background: var(--white); border: 2.5px solid var(--ink); border-radius: var(--radius); }
+    .faq summary {
+      list-style: none; cursor: pointer; padding: var(--space-2) var(--space-3); font-weight: 800; font-size: 1.05rem;
+      display: flex; justify-content: space-between; gap: var(--space-2); align-items: center;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+"; flex: 0 0 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--butter); border: 2px solid var(--ink); font-family: var(--font-heading); font-size: 1.3rem; line-height: 1;
+      transition: transform .25s;
+    }
+    .faq details[open] summary::after { transform: rotate(45deg); background: var(--berry); }
+    .faq details p { padding: 0 var(--space-3) var(--space-3); margin: 0; color: var(--ink-soft); }
+
+    /* =========================================================
+       11. ENQUIRY FORM
+       ========================================================= */
+    .contact { background: var(--white); border-top: 2px solid var(--border); }
+    .contact-grid { display: grid; gap: var(--space-6); }
+    .contact-info h3 { font-size: 1.5rem; }
+    .info-list { display: grid; gap: var(--space-3); margin-top: var(--space-3); }
+    .info-item { display: flex; gap: var(--space-2); align-items: flex-start; }
+    .info-icon { flex: 0 0 46px; height: 46px; border-radius: 14px; background: var(--sky-soft); border: 2px solid var(--ink); display: grid; place-items: center; }
+    .info-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .info-item strong { display: block; }
+    .info-item span, .info-item a { color: var(--ink-soft); }
+
+    .form-card { background: var(--bg); padding: var(--space-3); border-radius: var(--radius-lg); border: 2.5px solid var(--ink); box-shadow: 0 8px 0 var(--ink); }
+    .form-row { display: grid; gap: 0 var(--space-2); }
+    .field { margin-bottom: var(--space-2); }
+    .field label, .field legend { display: block; font-weight: 700; font-size: .95rem; margin-bottom: .3rem; padding: 0; }
+    .req { color: var(--error); }
+    .field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select, .field textarea {
+      width: 100%; min-height: 50px; padding: .7rem .95rem; border: 2px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--white); font-size: 1rem; transition: border-color .2s, box-shadow .2s;
+    }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 4px rgba(255,111,163,.35); }
+    .field .invalid { border-color: var(--error) !important; }
+    .error-msg { display: block; color: var(--error); font-size: .86rem; font-weight: 600; min-height: 1.2em; margin-top: .25rem; }
+    fieldset.field { border: 0; margin: 0 0 var(--space-2); padding: 0; min-width: 0; }
+    .chip-group { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .chip-group label { margin: 0; }
+    .chip-group input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .chip-group span {
+      display: inline-block; padding: .5rem 1.1rem; border-radius: 999px; border: 2px solid var(--ink);
+      background: var(--white); font-weight: 700; cursor: pointer; transition: background .15s;
+    }
+    .chip-group input:checked + span { background: var(--mint); }
+    .chip-group input:focus-visible + span { outline: 3px solid var(--berry); outline-offset: 2px; }
+    .consent label { display: flex; gap: .6rem; align-items: flex-start; font-weight: 600; font-size: .92rem; cursor: pointer; }
+    .consent input { width: 20px; height: 20px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--ink); }
+    /* Honeypot: hidden from people, visible to naive bots */
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    .success { text-align: center; padding: var(--space-4) var(--space-2); }
+    .success-icon { width: 76px; height: 76px; margin: 0 auto var(--space-2); border-radius: 50%; background: var(--mint); border: 2.5px solid var(--ink); display: grid; place-items: center; }
+    .success-icon svg { width: 38px; height: 38px; fill: none; stroke: var(--ink); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .success h3 { font-size: 1.6rem; }
+    .form-status { font-weight: 700; color: var(--error); min-height: 1.3em; margin: var(--space-1) 0 0; }
+
+    /* =========================================================
+       12. FOOTER
+       ========================================================= */
+    .site-footer { background: var(--ink); color: rgba(255,255,255,.82); padding-top: var(--space-8); }
+    .footer-grid { display: grid; gap: var(--space-4); padding-bottom: var(--space-6); }
+    .site-footer h2 { color: var(--white); font-size: 1.15rem; margin-bottom: var(--space-2); }
+    .site-footer .logo { color: var(--white); margin-bottom: var(--space-2); }
+    .site-footer li { margin-bottom: .5rem; }
+    .site-footer a { text-decoration: none; }
+    .site-footer li a:hover { color: var(--butter); text-decoration: underline; }
+
+    .newsletter-form { display: flex; flex-direction: column; gap: var(--space-1); }
+    .newsletter-form input {
+      min-height: 50px; padding: .7rem .95rem; border-radius: var(--radius-sm); border: 2px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.08); color: var(--white);
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.6); }
+    .newsletter-form input:focus { outline: none; border-color: var(--butter); }
+    .newsletter-form input.invalid { border-color: #FF9DBF; }
+    .newsletter-msg { font-size: .9rem; margin-top: .5rem; min-height: 1.3em; }
+    .newsletter-msg.error { color: #FF9DBF; }
+    .newsletter-msg.ok { color: var(--mint); }
+
+    .socials { display: flex; gap: .6rem; margin-top: var(--space-3); }
+    .socials a { width: 42px; height: 42px; border-radius: 50%; border: 2px solid rgba(255,255,255,.35); display: grid; place-items: center; color: var(--white); transition: background .2s, color .2s; }
+    .socials a:hover { background: var(--butter); color: var(--ink); }
+    .socials svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: var(--space-3) 0; font-size: .86rem; }
+    .footer-bottom p { margin: 0 0 .4rem; }
+    .disclaimer { color: rgba(255,255,255,.65); }
+
+    /* =========================================================
+       13. MOBILE CTA BAR + CHECKLIST NUDGE
+       ========================================================= */
+    .cta-bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; display: flex; gap: .6rem;
+      padding: .7rem var(--space-2) calc(.7rem + env(safe-area-inset-bottom));
+      background: var(--white); border-top: 2.5px solid var(--ink);
+    }
+    .cta-bar .btn { flex: 1; min-height: 48px; padding: .6rem .8rem; font-size: .95rem; box-shadow: none; }
+
+    .nudge {
+      position: fixed; z-index: 130; left: var(--space-2); right: var(--space-2);
+      bottom: calc(var(--cta-bar-height) + env(safe-area-inset-bottom) + 12px);
+      background: var(--butter); border: 2.5px solid var(--ink); border-radius: var(--radius); box-shadow: var(--shadow-pop);
+      padding: var(--space-2) var(--space-3); padding-right: 56px;
+      transform: translateY(24px); opacity: 0; transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .25s;
+    }
+    .nudge.show { transform: none; opacity: 1; }
+    .nudge h2 { font-size: 1.15rem; margin-bottom: .2rem; }
+    .nudge p { font-size: .92rem; margin-bottom: .6rem; }
+    .nudge .btn { min-height: 42px; padding: .45rem 1rem; font-size: .92rem; }
+    .nudge-close {
+      position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--ink); background: var(--white); cursor: pointer; font-size: 1.2rem; line-height: 1; font-weight: 800;
+    }
+
+    /* =========================================================
+       14. MOTION PREFERENCES
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation-duration: .01ms !important; }
+    }
+
+    /* =========================================================
+       15. RESPONSIVE: TABLET (>= 768px)
+       ========================================================= */
+    @media (min-width: 768px) {
+      :root { --cta-bar-height: 0px; }
+      body { padding-bottom: 0; }
+      .container { padding: 0 var(--space-4); }
+      .nav-toggle { display: none; }
+      .nav-links {
+        position: static; display: flex; flex-direction: row; align-items: center; gap: var(--space-1);
+        padding: 0; background: none; border: 0; box-shadow: none;
+      }
+      .nav-links .btn { margin: 0 0 0 var(--space-1); min-height: 44px; padding: .5rem 1.1rem; }
+      .cta-bar { display: none; }
+      .nudge { left: auto; right: 24px; bottom: 24px; max-width: 360px; }
+
+      .calc { padding: var(--space-4); }
+      .calc-stage { grid-template-columns: 130px 1fr; }
+      .egg-wrap { width: 130px; height: 130px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .step { padding: 72px 0 0; }
+      .magnet { padding: var(--space-6); }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .form-card { padding: var(--space-4); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { display: flex; justify-content: space-between; gap: var(--space-3); }
+      .footer-bottom p { margin: 0; }
+    }
+
+    /* =========================================================
+       16. RESPONSIVE: DESKTOP (>= 1024px)
+       ========================================================= */
+    @media (min-width: 1024px) {
+      .hero { padding-top: var(--space-6); }
+      .hero-grid { grid-template-columns: 1.05fr 1fr; gap: var(--space-8); }
+      .services-grid { grid-template-columns: repeat(6, 1fr); }
+      .service { grid-column: span 2; }
+      .service:nth-child(4), .service:nth-child(5) { grid-column: span 3; }
+      .magnet { grid-template-columns: 1fr 1fr; }
+      .carousel { --per-view: 3; }
+      .contact-grid { grid-template-columns: 5fr 7fr; gap: var(--space-8); align-items: start; }
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.4fr; }
+    }
+
+    /* =========================================================
+       17. PRINT (the checklist doubles as a printable PDF)
+       ========================================================= */
+    @media print {
+      body { padding: 0; background: #fff; }
+      body.print-checklist > *:not(main), body.print-checklist main > *:not(#checklist-section) { display: none !important; }
+      body.print-checklist #checklist-section .magnet > *:not(#checklist) { display: none !important; }
+      body.print-checklist .magnet { background: #fff; padding: 0; }
+      .checklist-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- =========================================================
+       STICKY NAVIGATION
+       ========================================================= -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Horizon Wealth Planning home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40c6 14 42 14 48 0" fill="none" stroke="#2B2250" stroke-width="4" stroke-linecap="round"/><ellipse cx="32" cy="30" rx="15" ry="19" fill="#FFD45C" stroke="#2B2250" stroke-width="3.5"/><ellipse cx="26" cy="23" rx="3.5" ry="5" fill="#fff" opacity=".7"/></svg>
+        Horizon Wealth
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#checklist-section">Free checklist</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn btn-berry">Book a free call</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- =========================================================
+         HERO + NEST EGG CALCULATOR
+         ========================================================= -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <h1 id="hero-title">Grow a comfy nest egg, one small step at a time</h1>
+          <p class="hero-sub">Friendly financial planning in Singapore for retirement, investing and insurance. Play with the calculator, then talk it through with a real planner. The first 45 minutes are free.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-berry">Book a free consultation</a>
+            <a href="#checklist-section" class="btn btn-white">Get the free checklist</a>
+          </div>
+          <ul class="trust" aria-label="About Horizon Wealth">
+            <li><strong>15+</strong> years planning</li>
+            <li><strong>1,200+</strong> families helped</li>
+            <li><strong>$500M</strong> advised</li>
+          </ul>
+        </div>
+
+        <!-- The memorable bit: an interactive calculator with a growing egg -->
+        <form class="calc" id="calc" aria-labelledby="calc-title">
+          <h2 id="calc-title">Nest egg calculator</h2>
+          <p class="calc-intro">Move the sliders to see what steady saving could grow into.</p>
+
+          <div class="calc-stage">
+            <div class="egg-wrap" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <g id="egg">
+                  <ellipse cx="60" cy="60" rx="26" ry="32" fill="#FFD45C" stroke="#2B2250" stroke-width="4"/>
+                  <ellipse cx="50" cy="48" rx="6" ry="9" fill="#fff" opacity=".7"/>
+                  <circle cx="52" cy="64" r="2.6" fill="#2B2250"/>
+                  <circle cx="68" cy="64" r="2.6" fill="#2B2250"/>
+                  <path d="M55 72q5 4 10 0" fill="none" stroke="#2B2250" stroke-width="2.6" stroke-linecap="round"/>
+                  <circle cx="46" cy="70" r="4" fill="#FF6FA3" opacity=".55"/>
+                  <circle cx="74" cy="70" r="4" fill="#FF6FA3" opacity=".55"/>
+                </g>
+                <path d="M14 86c10 24 82 24 92 0" fill="#C9A27A" stroke="#2B2250" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M22 92l10-6M40 100l6-10M62 102l2-10M82 98l-6-9M98 90l-10-5" stroke="#2B2250" stroke-width="2.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div aria-live="polite">
+              <span class="visually-hidden">Projected savings:</span>
+              <output class="calc-total" id="calcTotal" for="startAmt monthlyAmt years rate">$0</output>
+              <p class="calc-split">You put in <b id="calcIn">$0</b>, growth adds <b id="calcGrowth">$0</b></p>
+            </div>
+          </div>
+
+          <div class="range-field">
+            <label for="startAmt">Savings today <output id="startAmtOut" for="startAmt">$10,000</output></label>
+            <input type="range" id="startAmt" name="startAmt" min="0" max="200000" step="1000" value="10000">
+          </div>
+          <div class="range-field">
+            <label for="monthlyAmt">Saved each month <output id="monthlyAmtOut" for="monthlyAmt">$500</output></label>
+            <input type="range" id="monthlyAmt" name="monthlyAmt" min="0" max="5000" step="50" value="500">
+          </div>
+          <div class="range-field">
+            <label for="years">Years to grow <output id="yearsOut" for="years">20 years</output></label>
+            <input type="range" id="years" name="years" min="1" max="40" step="1" value="20">
+          </div>
+          <div class="range-field">
+            <label for="rate">Yearly return <output id="rateOut" for="rate">5%</output></label>
+            <input type="range" id="rate" name="rate" min="1" max="8" step="0.5" value="5">
+          </div>
+
+          <a href="#contact" class="btn btn-berry btn-block" id="calcCta">Get a plan for this goal</a>
+          <p class="fineprint">For illustration only. Assumes monthly compounding at a constant return, before fees and inflation. Real returns vary.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SERVICES
+         ========================================================= -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">Financial planning services in Singapore</h2>
+          <p>One planner looks after the whole picture, so your retirement, investments and insurance all pull in the same direction.</p>
+        </div>
+        <ul class="services-grid">
+          <li class="service">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-6h4v6"/></svg></div>
+            <h3>Retirement planning</h3>
+            <p>Work out the monthly income you will need and plan around CPF LIFE, SRS and your own savings to get there.</p>
+          </li>
+          <li class="service">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
+            <h3>Investment advisory</h3>
+            <p>A diversified, low-cost portfolio matched to how much risk you can live with, reviewed every year.</p>
+          </li>
+          <li class="service">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Insurance planning</h3>
+            <p>Check you are covered for what matters, without paying for overlapping policies you don't need.</p>
+          </li>
+          <li class="service">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+            <h3>Estate planning</h3>
+            <p>Wills, CPF nominations and lasting power of attorney, so the people you love are looked after.</p>
+          </li>
+          <li class="service">
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/></svg></div>
+            <h3>Tax planning</h3>
+            <p>Use reliefs such as SRS top-ups and CPF cash top-ups to keep more of what you earn, legally and simply.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HOW IT WORKS
+         ========================================================= -->
+    <section class="section steps-section" id="how-it-works" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="steps-title">How it works</h2>
+          <p>No jargon, no hard sell. Here is what happens after you book.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>Have a free chat</h3>
+            <p>A 45-minute call or coffee about your goals, savings, CPF and worries. You leave with three priority actions either way.</p>
+          </li>
+          <li class="step">
+            <h3>Get your plan</h3>
+            <p>Within two weeks you receive a written plan in plain English, with the fee agreed before any work starts.</p>
+          </li>
+          <li class="step">
+            <h3>Grow it together</h3>
+            <p>We check in twice a year and whenever life changes: a new job, a baby, a home or retirement.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LEAD MAGNET: FREE RETIREMENT CHECKLIST
+         ========================================================= -->
+    <section class="section" id="checklist-section" aria-labelledby="magnet-title">
+      <div class="container">
+        <div class="magnet">
+          <div>
+            <h2 id="magnet-title">Free retirement readiness checklist</h2>
+            <p>Ten quick checks that Singapore planners run first. Takes about five minutes, and you can tick them off right here or print them.</p>
+            <ul class="magnet-points">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Find gaps in your CPF and SRS plan</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Spot insurance you're paying twice for</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Know your retirement number</li>
+            </ul>
+          </div>
+
+          <div class="magnet-card" id="magnetCard">
+            <h3>Send me the checklist</h3>
+            <form id="magnetForm" novalidate>
+              <div class="field">
+                <label for="magnetName">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="magnetName" name="magnetName" autocomplete="given-name" maxlength="60" aria-describedby="magnetName-error" required>
+                <span class="error-msg" id="magnetName-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="magnetEmail">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="magnetEmail" name="magnetEmail" autocomplete="email" maxlength="254" aria-describedby="magnetEmail-error" required>
+                <span class="error-msg" id="magnetEmail-error" role="alert"></span>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="magnetWebsite">Leave this empty</label>
+                <input type="text" id="magnetWebsite" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <button type="submit" class="btn btn-berry btn-block">Unlock my checklist</button>
+              <p class="fineprint">No spam. Unsubscribe any time.</p>
+            </form>
+          </div>
+
+          <div class="checklist" id="checklist" hidden tabindex="-1">
+            <h3 id="checklistTitle">Your retirement readiness checklist</h3>
+            <ol>
+              <li><label><input type="checkbox"><span>I know roughly how much I spend each month.</span></label></li>
+              <li><label><input type="checkbox"><span>I have 3–6 months of expenses in an emergency fund.</span></label></li>
+              <li><label><input type="checkbox"><span>I have checked my CPF LIFE payout estimate.</span></label></li>
+              <li><label><input type="checkbox"><span>I know whether SRS contributions would cut my tax.</span></label></li>
+              <li><label><input type="checkbox"><span>My insurance covers death, disability and critical illness without overlaps.</span></label></li>
+              <li><label><input type="checkbox"><span>I invest regularly, not only when markets feel good.</span></label></li>
+              <li><label><input type="checkbox"><span>I know the yearly fees I pay on my investments.</span></label></li>
+              <li><label><input type="checkbox"><span>My CPF nominations and will are up to date.</span></label></li>
+              <li><label><input type="checkbox"><span>I have a target retirement age and monthly income.</span></label></li>
+              <li><label><input type="checkbox"><span>I review my plan at least once a year.</span></label></li>
+            </ol>
+            <div class="checklist-actions">
+              <button type="button" class="btn btn-butter" id="printChecklist">Print or save as PDF</button>
+              <a href="#contact" class="btn btn-berry">Review my answers with a planner</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS CAROUSEL
+         ========================================================= -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="testimonials-title">What our clients say</h2>
+          <p>Families and professionals across Singapore who planned for what matters most.</p>
+        </div>
+
+        <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="track">
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Horizon turned a vague worry about retirement into a clear, achievable plan. I finally feel in control of my future.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=47" alt="Portrait of Sarah Mitchell" width="52" height="52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <div><span class="author-name">Sarah Mitchell</span><span class="author-role">Primary school teacher</span></div>
+                  </div>
+                </div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Their investment strategy was tailored to my risk appetite. Three years on, my portfolio has grown steadily and I sleep well.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=12" alt="Portrait of David Tan" width="52" height="52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <div><span class="author-name">David Tan</span><span class="author-role">Software engineer</span></div>
+                  </div>
+                </div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“When we needed insurance and estate planning for our family, they explained every option patiently and without pressure.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=32" alt="Portrait of Priya Nair" width="52" height="52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <div><span class="author-name">Priya Nair</span><span class="author-role">Paediatric nurse</span></div>
+                  </div>
+                </div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“As a business owner, my finances were complicated. Horizon simplified my tax planning and saved me thousands.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=15" alt="Portrait of James Okafor" width="52" height="52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <div><span class="author-name">James Okafor</span><span class="author-role">Restaurant owner</span></div>
+                  </div>
+                </div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                <div class="card">
+                  <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+                  <blockquote>“Honest, professional and genuinely caring. They helped us retire two years earlier than we thought possible.”</blockquote>
+                  <div class="card-author">
+                    <img class="avatar" src="https://i.pravatar.cc/120?img=68" alt="Portrait of Robert Lim" width="52" height="52" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <div><span class="author-name">Robert Lim</span><span class="author-role">Retired civil engineer</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-arrow" id="prevBtn" type="button" aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="dots" role="tablist" aria-label="Choose testimonial"></div>
+            <button class="carousel-arrow" id="nextBtn" type="button" aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ (mirrors the FAQPage JSON-LD in <head>; keep them in sync)
+         ========================================================= -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-title">Questions people ask before booking</h2>
+          <p>Straight answers about cost, CPF and what to expect.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How much does the first consultation cost?</summary>
+            <p>Nothing. The first 45-minute consultation is free, with no obligation to buy any product.</p>
+          </details>
+          <details>
+            <summary>Do I need a lot of money to start financial planning?</summary>
+            <p>No. Many clients start with a monthly budget and an emergency fund. A plan is most useful early, when small habits have the longest time to grow.</p>
+          </details>
+          <details>
+            <summary>What happens in the first meeting?</summary>
+            <p>We talk about your goals, current savings, CPF, insurance and timeline. You leave with three priority actions, whether or not you work with us.</p>
+          </details>
+          <details>
+            <summary>How does Horizon Wealth get paid?</summary>
+            <p>We charge a flat planning fee agreed in writing before any work starts, and we disclose any product commission up front.</p>
+          </details>
+          <details>
+            <summary>Can you help with CPF and retirement in Singapore?</summary>
+            <p>Yes. We plan around CPF LIFE, SRS contributions and your cash savings to estimate a realistic monthly retirement income.</p>
+          </details>
+          <details>
+            <summary>Is my personal information safe?</summary>
+            <p>We only ask for what we need to contact you, never ask for passwords or bank logins, and handle personal data in line with Singapore's PDPA.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ENQUIRY FORM
+         ========================================================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-title">Book your free consultation</h2>
+          <p>Tell us a little about yourself and a planner will reply within one business day.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Prefer to talk first?</h3>
+            <p>Drop by our Marina Bay office or reach us any of these ways.</p>
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div><strong>Address</strong><span>88 Marina Boulevard, #20-01<br>Horizon Tower, Singapore 018980</span></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                <div><strong>Phone</strong><a href="tel:+6561234567">+65 6123 4567</a></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg></span>
+                <div><strong>Email</strong><a href="mailto:hello@horizonwealth.example">hello@horizonwealth.example</a></div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <div><strong>Office hours</strong><span>Mon–Fri: 9:00 am – 6:00 pm<br>Sat: 10:00 am – 1:00 pm</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-card" id="formCard">
+            <form id="enquiryForm" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" autocomplete="name" maxlength="80" aria-describedby="fullName-error" required>
+                  <span class="error-msg" id="fullName-error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" maxlength="254" aria-describedby="email-error" required>
+                  <span class="error-msg" id="email-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" maxlength="15" placeholder="Digits only, 8–15" aria-describedby="phone-error" required>
+                  <span class="error-msg" id="phone-error" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="ageRange">Age range <span class="req" aria-hidden="true">*</span></label>
+                  <select id="ageRange" name="ageRange" aria-describedby="ageRange-error" required>
+                    <option value="">Select…</option>
+                    <option>18–29</option>
+                    <option>30–39</option>
+                    <option>40–49</option>
+                    <option>50–59</option>
+                    <option>60+</option>
+                  </select>
+                  <span class="error-msg" id="ageRange-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="interest">What would you like help with? <span class="req" aria-hidden="true">*</span></label>
+                <select id="interest" name="interest" aria-describedby="interest-error" required>
+                  <option value="">Select…</option>
+                  <option>Retirement Planning</option>
+                  <option>Investment</option>
+                  <option>Insurance</option>
+                  <option>Estate Planning</option>
+                  <option>Tax Planning</option>
+                </select>
+                <span class="error-msg" id="interest-error" role="alert"></span>
+              </div>
+
+              <fieldset class="field" aria-describedby="contactMethod-error">
+                <legend>Best way to reach you <span class="req" aria-hidden="true">*</span></legend>
+                <div class="chip-group">
+                  <label><input type="radio" name="contactMethod" value="Email"><span>Email</span></label>
+                  <label><input type="radio" name="contactMethod" value="Phone"><span>Phone</span></label>
+                  <label><input type="radio" name="contactMethod" value="WhatsApp"><span>WhatsApp</span></label>
+                </div>
+                <span class="error-msg" id="contactMethod-error" role="alert"></span>
+              </fieldset>
+
+              <div class="field">
+                <label for="message">Anything else? (optional)</label>
+                <textarea id="message" name="message" maxlength="1000" placeholder="Your goals, or questions for your planner. Please don't include NRIC or account numbers."></textarea>
+              </div>
+
+              <div class="hp" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field consent">
+                <label for="consent">
+                  <input type="checkbox" id="consent" name="consent" aria-describedby="consent-error" required>
+                  <span>I agree that Horizon Wealth Planning may contact me about this enquiry, in line with the PDPA. <span class="req" aria-hidden="true">*</span></span>
+                </label>
+                <span class="error-msg" id="consent-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn-berry btn-block" id="submitBtn">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Book my free consultation</span>
+              </button>
+              <p class="form-status" id="formStatus" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="logo">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40c6 14 42 14 48 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/><ellipse cx="32" cy="30" rx="15" ry="19" fill="#FFD45C" stroke="#fff" stroke-width="3.5"/></svg>
+            Horizon Wealth
+          </a>
+          <p>Independent, client-first financial planning in Singapore. We help individuals and families build lasting wealth and protect what matters most.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" aria-label="Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a>
+            <a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.9H3.7V20h3.2V8.9zM5.3 3.9a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.3 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.3.7-2.8 1.4V8.9h-3.1V20h3.2v-6c0-1.6.6-2.6 1.9-2.6 1.2 0 1.7.9 1.7 2.6V20h3.3v-6.4z"/></svg></a>
+            <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" aria-label="Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 7.4a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8zM17 6.2a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1zM16 3H8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V8a5 5 0 0 0-5-5zm3.4 13A3.4 3.4 0 0 1 16 19.4H8A3.4 3.4 0 0 1 4.6 16V8A3.4 3.4 0 0 1 8 4.6h8A3.4 3.4 0 0 1 19.4 8v8z"/></svg></a>
+          </div>
+        </div>
+
+        <nav aria-labelledby="footer-links-title">
+          <h2 id="footer-links-title">Explore</h2>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#checklist-section">Free checklist</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Book a consultation</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Services</h2>
+          <ul>
+            <li>Retirement planning</li>
+            <li>Investment advisory</li>
+            <li>Insurance planning</li>
+            <li>Estate planning</li>
+            <li>Tax planning</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Monthly money tips</h2>
+          <p>One short email a month on saving, CPF and investing in Singapore.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletterEmail" placeholder="Your email address" autocomplete="email" maxlength="254" aria-describedby="newsletterMsg">
+            <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-label="Leave this empty"></div>
+            <button type="submit" class="btn btn-butter">Subscribe</button>
+          </form>
+          <div class="newsletter-msg" id="newsletterMsg" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Horizon Wealth Planning. A fictional firm for demonstration.</p>
+        <p class="disclaimer">This website is for general information only and is not financial advice. Calculator results are illustrations, not guarantees.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile-only sticky call-to-action bar -->
+  <div class="cta-bar" aria-label="Quick actions" role="region">
+    <a href="#checklist-section" class="btn btn-white">Free checklist</a>
+    <a href="#contact" class="btn btn-berry">Book free call</a>
+  </div>
+
+  <!-- One-time checklist nudge (shown after scrolling halfway, once per session) -->
+  <aside class="nudge" id="nudge" aria-labelledby="nudge-title" hidden>
+    <h2 id="nudge-title">Before you go</h2>
+    <p>Grab the free 10-point retirement checklist. It takes five minutes.</p>
+    <a href="#checklist-section" class="btn btn-berry" id="nudgeCta">Show me the checklist</a>
+    <button type="button" class="nudge-close" id="nudgeClose" aria-label="Dismiss">×</button>
+  </aside>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* =========================================================
+         0. FRAME BUSTING (meta CSP can't set frame-ancestors)
+         ========================================================= */
+      if (window.top !== window.self) {
+        try { window.top.location.replace(window.self.location.href); }
+        catch (err) { document.documentElement.hidden = true; }
+      }
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var EMAIL_RE = /^[^\s@<>"']{1,64}@[^\s@<>"']+\.[^\s@<>"']{2,}$/;
+      var PAGE_LOADED_AT = Date.now();
+      var nudge = document.getElementById('nudge');
+      var MIN_FILL_MS = 2500; // humans don't submit a form within 2.5s of landing
+
+      // Bots fill the hidden honeypot or submit impossibly fast
+      function looksLikeBot(formEl) {
+        var hp = formEl.querySelector('input[name="website"]');
+        return (hp && hp.value !== '') || (Date.now() - PAGE_LOADED_AT < MIN_FILL_MS);
+      }
+      // Strip control characters and trim; output only ever goes through textContent
+      function clean(value, max) {
+        return String(value).replace(/[\u0000-\u001F\u007F]/g, ' ').trim().slice(0, max);
+      }
+      function safeStorage(method, key, value) {
+        try { return window.sessionStorage[method](key, value); } catch (err) { return null; }
+      }
+
+      /* =========================================================
+         1. MOBILE MENU TOGGLE
+         ========================================================= */
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+
+      function setMenu(open) {
+        navLinks.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      navToggle.addEventListener('click', function () {
+        setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
+      });
+      navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); hideNudge(); } });
+
+      /* =========================================================
+         2. NEST EGG CALCULATOR
+         ========================================================= */
+      var calc = document.getElementById('calc');
+      var egg = document.getElementById('egg');
+      var money = new Intl.NumberFormat('en-SG', { style: 'currency', currency: 'SGD', currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 });
+
+      function futureValue(start, monthly, years, ratePct) {
+        var i = ratePct / 100 / 12;
+        var n = years * 12;
+        var growth = Math.pow(1 + i, n);
+        return start * growth + monthly * ((growth - 1) / i);
+      }
+
+      function updateCalc() {
+        var start = Number(calc.startAmt.value);
+        var monthly = Number(calc.monthlyAmt.value);
+        var years = Number(calc.years.value);
+        var rate = Number(calc.rate.value);
+        var total = futureValue(start, monthly, years, rate);
+        var paidIn = start + monthly * 12 * years;
+
+        document.getElementById('startAmtOut').textContent = money.format(start);
+        document.getElementById('monthlyAmtOut').textContent = money.format(monthly);
+        document.getElementById('yearsOut').textContent = years + (years === 1 ? ' year' : ' years');
+        document.getElementById('rateOut').textContent = rate + '%';
+        document.getElementById('calcTotal').textContent = money.format(total);
+        document.getElementById('calcIn').textContent = money.format(paidIn);
+        document.getElementById('calcGrowth').textContent = money.format(Math.max(total - paidIn, 0));
+
+        // Egg grows with the total, from 0.55x up to 1.15x at $2M+
+        var scale = 0.55 + 0.6 * Math.min(Math.sqrt(total / 2000000), 1);
+        egg.style.transform = 'scale(' + scale.toFixed(3) + ')';
+      }
+      calc.addEventListener('input', updateCalc);
+      calc.addEventListener('submit', function (e) { e.preventDefault(); });
+      updateCalc();
+
+      // The calculator CTA pre-selects retirement planning in the enquiry form
+      document.getElementById('calcCta').addEventListener('click', function () {
+        var interest = document.getElementById('interest');
+        if (!interest.value) interest.value = 'Retirement Planning';
+      });
+
+      /* =========================================================
+         3. LEAD MAGNET: CHECKLIST UNLOCK
+         ========================================================= */
+      var magnetForm = document.getElementById('magnetForm');
+      var magnetValidators = {
+        magnetName: function () {
+          var v = clean(magnetForm.magnetName.value, 60);
+          return setError('magnetName', !v ? 'Please enter your first name.' : '');
+        },
+        magnetEmail: function () {
+          var v = clean(magnetForm.magnetEmail.value, 254);
+          return setError('magnetEmail', !v ? 'Please enter your email address.' : !EMAIL_RE.test(v) ? 'Please enter a valid email address, like name@example.com.' : '');
+        }
+      };
+      wireLiveValidation(magnetForm, magnetValidators);
+
+      function unlockChecklist(name, moveFocus) {
+        var checklist = document.getElementById('checklist');
+        document.getElementById('magnetCard').hidden = true;
+        if (name) document.getElementById('checklistTitle').textContent = name + ', here is your retirement readiness checklist';
+        checklist.hidden = false;
+        if (moveFocus) checklist.focus();
+        safeStorage('setItem', 'hw-checklist', '1');
+        hideNudge();
+      }
+
+      magnetForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!runValidators(magnetForm, magnetValidators)) return;
+        if (looksLikeBot(magnetForm)) return;
+        var name = clean(magnetForm.magnetName.value, 60);
+        console.log('Checklist lead (demo, not sent):', { firstName: name, email: clean(magnetForm.magnetEmail.value, 254) });
+        unlockChecklist(name, true);
+      });
+      if (safeStorage('getItem', 'hw-checklist') === '1') unlockChecklist('', false);
+
+      document.getElementById('printChecklist').addEventListener('click', function () {
+        document.body.classList.add('print-checklist');
+        window.print();
+      });
+      window.addEventListener('afterprint', function () { document.body.classList.remove('print-checklist'); });
+
+      /* =========================================================
+         4. TESTIMONIAL CAROUSEL
+         ========================================================= */
+      var carousel = document.getElementById('carousel');
+      var track = document.getElementById('track');
+      var slides = track.children;
+      var dotsWrap = document.getElementById('dots');
+      var desktopQuery = window.matchMedia('(min-width: 1024px)');
+      var AUTOPLAY_MS = 6000;
+      var current = 0;
+      var timer = null;
+      var paused = false;
+
+      function perView() { return desktopQuery.matches ? 3 : 1; }
+      function pageCount() { return Math.max(slides.length - perView() + 1, 1); }
+
+      function buildDots() {
+        while (dotsWrap.firstChild) dotsWrap.removeChild(dotsWrap.firstChild);
+        for (var i = 0; i < pageCount(); i++) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'dot';
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+          dot.dataset.index = i;
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function render() {
+        track.style.transform = 'translateX(' + (-current * 100 / perView()) + '%)';
+        Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+          dot.setAttribute('aria-selected', String(i === current));
+          dot.tabIndex = i === current ? 0 : -1;
+        });
+        Array.prototype.forEach.call(slides, function (slide, i) {
+          var visible = i >= current && i < current + perView();
+          slide.setAttribute('aria-hidden', String(!visible));
+        });
+      }
+
+      function goTo(index) {
+        var count = pageCount();
+        current = (index + count) % count;
+        render();
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (reduceMotion) return;
+        timer = setInterval(function () { if (!paused && !document.hidden) goTo(current + 1); }, AUTOPLAY_MS);
+      }
+      function stopAutoplay() { clearInterval(timer); timer = null; }
+
+      document.getElementById('prevBtn').addEventListener('click', function () { goTo(current - 1); startAutoplay(); });
+      document.getElementById('nextBtn').addEventListener('click', function () { goTo(current + 1); startAutoplay(); });
+      dotsWrap.addEventListener('click', function (e) {
+        var dot = e.target.closest('.dot');
+        if (dot) { goTo(parseInt(dot.dataset.index, 10)); startAutoplay(); }
+      });
+
+      carousel.addEventListener('mouseenter', function () { paused = true; });
+      carousel.addEventListener('mouseleave', function () { paused = false; });
+      carousel.addEventListener('focusin', function () { paused = true; });
+      carousel.addEventListener('focusout', function () { paused = false; });
+
+      var touchStartX = 0, touchStartY = 0;
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+        paused = true;
+      }, { passive: true });
+      carousel.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+          goTo(dx < 0 ? current + 1 : current - 1);
+          startAutoplay();
+        }
+        paused = false;
+      }, { passive: true });
+
+      function onBreakpointChange() { buildDots(); goTo(Math.min(current, pageCount() - 1)); }
+      if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', onBreakpointChange);
+      else desktopQuery.addListener(onBreakpointChange);
+
+      buildDots();
+      render();
+      startAutoplay();
+
+      /* =========================================================
+         5. ENQUIRY FORM VALIDATION & SUBMIT
+         ========================================================= */
+      var form = document.getElementById('enquiryForm');
+      var submitBtn = document.getElementById('submitBtn');
+      var PHONE_RE = /^\d{8,15}$/;
+
+      function setError(id, message) {
+        var errorEl = document.getElementById(id + '-error');
+        var inputEl = document.getElementById(id);
+        errorEl.textContent = message;
+        if (inputEl) {
+          inputEl.classList.toggle('invalid', !!message);
+          inputEl.setAttribute('aria-invalid', message ? 'true' : 'false');
+        }
+        return !message;
+      }
+
+      var validators = {
+        fullName: function () {
+          var v = clean(form.fullName.value, 80);
+          return setError('fullName', !v ? 'Please enter your full name.' : v.length < 2 ? 'Name must be at least 2 characters.' : '');
+        },
+        email: function () {
+          var v = clean(form.email.value, 254);
+          return setError('email', !v ? 'Please enter your email address.' : !EMAIL_RE.test(v) ? 'Please enter a valid email address, like name@example.com.' : '');
+        },
+        phone: function () {
+          var v = form.phone.value.trim();
+          return setError('phone', !v ? 'Please enter your phone number.' : !PHONE_RE.test(v) ? 'Use digits only, 8 to 15 of them.' : '');
+        },
+        ageRange: function () { return setError('ageRange', form.ageRange.value ? '' : 'Please select your age range.'); },
+        interest: function () { return setError('interest', form.interest.value ? '' : 'Please choose what you would like help with.'); },
+        contactMethod: function () {
+          var ok = !!form.querySelector('input[name="contactMethod"]:checked');
+          document.getElementById('contactMethod-error').textContent = ok ? '' : 'Please choose how we should reach you.';
+          return ok;
+        },
+        consent: function () { return setError('consent', form.consent.checked ? '' : 'Please tick the box so we can contact you.'); }
+      };
+
+      // Re-validate on blur; once a field shows an error, clear it live as it's fixed
+      function wireLiveValidation(formEl, rules) {
+        Object.keys(rules).forEach(function (name) {
+          formEl.querySelectorAll('[name="' + name + '"]').forEach(function (field) {
+            field.addEventListener('blur', function () { if (field.type !== 'radio') rules[name](); });
+            field.addEventListener(field.tagName === 'SELECT' || field.type === 'radio' || field.type === 'checkbox' ? 'change' : 'input', function () {
+              if (document.getElementById(name + '-error').textContent) rules[name]();
+            });
+          });
+        });
+      }
+      function runValidators(formEl, rules) {
+        var firstInvalid = null;
+        Object.keys(rules).forEach(function (name) {
+          if (!rules[name]() && !firstInvalid) firstInvalid = formEl.querySelector('[name="' + name + '"]');
+        });
+        if (firstInvalid) firstInvalid.focus();
+        return !firstInvalid;
+      }
+      wireLiveValidation(form, validators);
+
+      function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+        if (!runValidators(form, validators)) return;
+        if (looksLikeBot(form)) {
+          document.getElementById('formStatus').textContent = 'That was quick! Please wait a moment and press the button again.';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        submitBtn.querySelector('.btn-label').textContent = 'Booking…';
+
+        setTimeout(function () {
+          var data = {
+            fullName: clean(form.fullName.value, 80),
+            email: clean(form.email.value, 254),
+            phone: form.phone.value.trim(),
+            ageRange: form.ageRange.value,
+            areaOfInterest: form.interest.value,
+            preferredContactMethod: form.querySelector('input[name="contactMethod"]:checked').value,
+            message: clean(form.message.value, 1000),
+            consent: form.consent.checked
+          };
+          console.log(JSON.stringify(data, null, 2));
+
+          // Build the success message with DOM methods only; user input never touches innerHTML
+          var card = document.getElementById('formCard');
+          while (card.firstChild) card.removeChild(card.firstChild);
+          var box = el('div', 'success');
+          box.setAttribute('role', 'status');
+          box.tabIndex = -1;
+          var icon = el('div', 'success-icon');
+          icon.setAttribute('aria-hidden', 'true');
+          var svgNS = 'http://www.w3.org/2000/svg';
+          var svg = document.createElementNS(svgNS, 'svg');
+          svg.setAttribute('viewBox', '0 0 24 24');
+          var tick = document.createElementNS(svgNS, 'polyline');
+          tick.setAttribute('points', '20 6 9 17 4 12');
+          svg.appendChild(tick);
+          icon.appendChild(svg);
+          var p = el('p', '', 'Your consultation request is in. A planner will contact you by ' + data.preferredContactMethod.toLowerCase() + ' within one business day.');
+          box.appendChild(icon);
+          box.appendChild(el('h3', '', 'Thank you, ' + data.fullName + '!'));
+          box.appendChild(p);
+          card.appendChild(box);
+          box.focus();
+        }, 1500);
+      });
+
+      /* =========================================================
+         6. NEWSLETTER SIGNUP
+         ========================================================= */
+      var newsletterForm = document.getElementById('newsletterForm');
+      var newsletterInput = document.getElementById('newsletterEmail');
+      var newsletterMsg = document.getElementById('newsletterMsg');
+
+      newsletterForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var v = clean(newsletterInput.value, 254);
+        var valid = EMAIL_RE.test(v);
+        newsletterInput.classList.toggle('invalid', !valid);
+        newsletterInput.setAttribute('aria-invalid', String(!valid));
+        newsletterMsg.className = 'newsletter-msg ' + (valid ? 'ok' : 'error');
+        if (valid && looksLikeBot(newsletterForm)) return;
+        newsletterMsg.textContent = valid
+          ? 'You are on the list. Look out for the first email next month.'
+          : (v ? 'Please enter a valid email address.' : 'Please enter your email address.');
+        if (valid) newsletterForm.reset();
+      });
+
+      /* =========================================================
+         7. CHECKLIST NUDGE (once per session, after scrolling halfway)
+         ========================================================= */
+      var nudgeShown = safeStorage('getItem', 'hw-nudge') === '1';
+
+      function hideNudge() {
+        if (nudge.hidden) return;
+        nudge.classList.remove('show');
+        setTimeout(function () { nudge.hidden = true; }, reduceMotion ? 0 : 300);
+      }
+      function maybeShowNudge() {
+        if (nudgeShown || !document.getElementById('checklist').hidden) return;
+        var scrolled = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+        if (scrolled < 0.55) return;
+        nudgeShown = true;
+        safeStorage('setItem', 'hw-nudge', '1');
+        nudge.hidden = false;
+        requestAnimationFrame(function () { requestAnimationFrame(function () { nudge.classList.add('show'); }); });
+      }
+      window.addEventListener('scroll', maybeShowNudge, { passive: true });
+      document.getElementById('nudgeClose').addEventListener('click', hideNudge);
+      document.getElementById('nudgeCta').addEventListener('click', hideNudge);
+
+      /* =========================================================
+         8. FOOTER YEAR
+         ========================================================= */
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A one-page marketing site for the fictional "Horizon Wealth Planning" firm. The whole site is one file, `index.html`, with CSS in a `<style>` tag and JS in a `<script>` tag. There is no framework, build step, package manager, linter or test suite. Keep it that way: no external JS/CSS files or dependencies (only Google Fonts, Unsplash and pravatar.cc are loaded remotely).
 
+A revamped version lives in `v2/index.html` (published at `/v2/`) and follows the same single-file structure. Leave the root `index.html` unchanged so the two can be compared. v2 has a hash-based Content-Security-Policy `<meta>`: after any edit to its `<style>` or `<script>` body, run `python tools/update-csp.py`, or the browser will block the page's CSS/JS. Its FAQ markup and the `FAQPage` JSON-LD in `<head>` must stay in sync. New files the site needs must also be copied into `_site` in `.github/workflows/pages.yml`.
+
 ## Commands
 
 - Run: open `index.html` in a browser, or serve it with `python -m http.server` from the repo root.
